@@ -1,0 +1,1233 @@
+{% load  staticfiles %}
+<html>
+  <head>
+    <title>运营分析可视化系统</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Blue Moon - Responsive Admin Dashboard" />
+    <meta name="keywords" content="Notifications, Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap, bootstrap.gallery" />
+    <meta name="author" content="Bootstrap Gallery" />
+    <link rel="shortcut icon" href="{% static 'blue-moon/img/favicon.ico' %}">
+    <link href="{% static 'blue-moon/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blue-moon/css/new.css' %}" rel="stylesheet">
+    <link href="{% static 'blue-moon/css/charts-graphs.css' %}" rel="stylesheet">
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blue-moon/css/datepicker.css' %}">
+
+    <link href="{% static 'blue-moon/fonts/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="{% static 'blue-moon/js/html5shiv.js' %}"></script>
+      <script src="{% static 'blue-moon/js/respond.min.js' %}"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Header Start -->
+    <header>
+
+      <h2 style="color:orange;width:600px;float:left;font-family: 'Microsoft YaHei';margin: 10px 0 0 0;line-height: 50px"><img src="{% static 'images/MTV.png' %}"/><span style="margin-left:5px;vertical-align: bottom">运营分析可视化系统</span></h2>
+      <div class="pull-right">
+        <ul id="mini-nav" class="clearfix">
+          <li class="list-box hidden-xs">
+            <a href="#" data-toggle="modal" data-target="#modalMd">
+              <span class="text-white">Code</span> <i class="fa fa-code"></i>
+            </a>
+            <!-- Modal -->
+            <div class="modal fade" id="modalMd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-danger" id="myModalLabel5">Coding Style </h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="img/documentation.png" alt="Esquare Admin">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-box dropdown">
+            <a id="drop5" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-film"></i>
+            </a>
+            <span class="info-label info-bg">9+</span>
+            <ul class="dropdown-menu stats-widget clearfix">
+              <li>
+                <h5 class="text-success">$37895</h5>
+                <p>Revenue <span class="text-success">+2%</span></p>
+                <div class="progress progress-mini">
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                    <span class="sr-only">40% Complete (success)</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <h5 class="text-warning">47,892</h5>
+                <p>Downloads <span class="text-warning">+39%</span></p>
+                <div class="progress progress-mini">
+                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                    <span class="sr-only">40% Complete (warning)</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <h5 class="text-danger">28214</h5>
+                <p>Uploads <span class="text-danger">-7%</span></p>
+                <div class="progress progress-mini">
+                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                    <span class="sr-only">40% Complete (danger)</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="list-box dropdown">
+            <a id="drop5" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-calendar"></i>
+            </a>
+            <span class="info-label success-bg">6</span>
+            <ul class="dropdown-menu server-activity">
+              <li>
+                <p><i class="fa fa-flag text-info"></i> Pending request<span class="time">3 hrs</span></p>
+              </li>
+              <li>
+                <p><i class="fa fa-fire text-warning"></i> Server Crashed<span class="time">3mins</span></p>
+              </li>
+              <li>
+                <p><i class="fa fa-user text-success"></i> 3 New users<span class="time">1 min</span></p>
+              </li>
+              <li>
+                <p><i class="fa fa-bell text-danger"></i>9 pending requests<span class="time">5 min</span></p>
+              </li>
+              <li>
+                <p><i class="fa fa-plane text-info"></i> Performance<span class="time">25 min</span></p>
+              </li>
+              <li>
+                <p><i class="fa fa-envelope text-warning"></i>12 new emails<span class="time">25 min</span></p>
+              </li>
+              <li>
+                <p><i class="fa fa-cog icon-spin text-success"></i> Location settings<span class="time">4 hrs</span></p>
+              </li>
+            </ul>
+          </li>
+          <li class="list-box user-profile">
+            <a id="drop7" href="#" role="button" class="dropdown-toggle user-avtar" data-toggle="dropdown">
+              <img src="{% static 'blue-moon/img/user5.png' %}" alt="Bluemoon User">
+            </a>
+            <ul class="dropdown-menu server-activity">
+              <li>
+                <p><i class="fa fa-cog text-info"></i> Account Settings</p>
+              </li>
+              <li>
+                <p><i class="fa fa-fire text-warning"></i> Payment Details</p>
+              </li>
+              <li>
+                <div class="demo-btn-group clearfix">
+                  <a href="#" data-original-title="" title="">
+                    <i class="fa fa-facebook fa-lg icon-rounded info-bg"></i>
+                  </a>
+                  <a href="#" data-original-title="" title="">
+                    <i class="fa fa-twitter fa-lg icon-rounded twitter-bg"></i>
+                  </a>
+                  <a href="#" data-original-title="" title="">
+                    <i class="fa fa-linkedin fa-lg icon-rounded linkedin-bg"></i>
+                  </a>
+                  <a href="#" data-original-title="" title="">
+                    <i class="fa fa-pinterest fa-lg icon-rounded danger-bg"></i>
+                  </a>
+                  <a href="#" data-original-title="" title="">
+                    <i class="fa fa-google-plus fa-lg icon-rounded success-bg"></i>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="demo-btn-group clearfix">
+                  <button href="#" class="btn btn-danger">
+                    Logout
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Container start -->
+    <div class="dashboard-container">
+
+      <div class="container">
+        <!-- Top Nav Start -->
+        <div id='cssmenu'>
+          <ul>
+            <li class='active'>
+              <a href='#'>
+                <i class="fa fa-dashboard"></i>
+                <span >全平台</span>
+              </a>
+            </li>
+            <li>
+              <a href="forms.html">
+                <i class="fa fa-align-justify"></i>
+                频道
+              </a>
+            </li>
+            <li class=''>
+              <a href='#'><i class="fa fa-bar-chart-o"></i>节目</a>
+              <ul>
+                 <li><a href='flot.html'>Flot Graphs</a></li>
+                 <li><a href='graphs.html'>Google Graph</a></li>
+                 <li><a href='vector-maps.html'>Vector Maps</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Top Nav End -->
+
+
+
+        <!-- Sub Nav End -->
+
+        <!-- Dashboard Wrapper Start -->
+        <div class="dashboard-wrapper-lg">
+          <div class="widget">
+            <div class="wedger-header-blue">
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div style="font-size: 24px;font-weight: bold;margin:0 -15px;color:#fff;" >往日概况 </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <label for="exampleInputName2" style="font-size: 14px">开始时间：</label>
+                      <input type="date" class="form-control" id="exampleInputName2" placeholder="开始时间">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail2" style="font-size: 14px">结束时间：</label>
+                      <input type="date" class="form-control" id="exampleInputEmail2" placeholder="结束时间">
+                    </div>
+                    <button type="submit" class="btn btn-default">查询</button>
+                  </form>
+                </div>
+
+            </div>
+            <div class="widget-body">
+              <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-6" >
+                  <div id="header_one" style="height:150px;"></div>
+                </div>
+                <div class="col-lg-2 col-md-2  col-sm-6">
+                  <div class="mini-widget">
+                    <div class="mini-widget-heading clearfix">
+                      <div class="text-center">VV</div>
+                    </div>
+                    <div class="mini-widget-body clearfix">
+                      <div class="pull-left">
+                        <i style="background:url({% static 'images/imgList.png)' %} no-repeat 0 -62px; width: 60px;height:60px;display: inline-block"></i>
+                      </div>
+                      <div class="pull-right number">{{overview_platform_day_dict.vv.0}}</div>
+                    </div>
+                    <div class="mini-widget-footer clearfix">
+                      <div class="pull-left"><span style="margin-right: 10px">环比</span><i class="fa fa-arrow-down"></i> <i>{{overview_platform_day_dict.vv.1}}</i></div>
+                      <div class="pull-right"><span style="margin-right: 10px">同比</span><i class="fa fa-arrow-up"></i></i><i>{{overview_platform_day_dict.vv.2}}</i></div>
+                    </div>
+                    <!--                 <div class="mini-widget-footer center-align-text">
+                                      <span>Better than last week</span>
+                                    </div> -->
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                  <div class="mini-widget">
+                    <div class="mini-widget-heading clearfix">
+                      <div class="text-center">UV</div>
+                    </div>
+                    <div class="mini-widget-body clearfix">
+                      <div class="pull-left">
+                        <i style="background:url({% static 'images/imgList.png)' %} no-repeat -60px -60px; width: 60px;height:60px;display: inline-block"></i>
+                      </div>
+                      <div class="pull-right number">{{overview_platform_day_dict.uv.0}}</div>
+                    </div>
+                    <div class="mini-widget-footer clearfix">
+                      <div class="pull-left"><span style="margin-right: 10px">环比</span><i class="fa fa-arrow-down"></i> <i>{{overview_platform_day_dict.uv.1}}</i></div>
+                      <div class="pull-right"><span style="margin-right: 10px">同比</span><i class="fa fa-arrow-up"></i><i>{{overview_platform_day_dict.uv.2}}</i></div>
+                    </div>
+                    <!--                 <div class="mini-widget-footer center-align-text">
+                                      <span>Better than last week</span>
+                                    </div> -->
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                  <div class="mini-widget">
+                    <div class="mini-widget-heading clearfix">
+                      <div class="pull-center">PV</div>
+                    </div>
+                    <div class="mini-widget-body clearfix">
+                      <div class="pull-left">
+                        <i style="background:url({% static 'images/imgList.png)' %} no-repeat 60px -60px; width: 60px;height:60px;display: inline-block"></i>
+                      </div>
+                      <div class="pull-right number">{{overview_platform_day_dict.pv.0}}</div>
+                    </div>
+                    <div class="mini-widget-footer clearfix">
+                      <div class="pull-left"><span style="margin-right: 10px">环比</span><i class="fa fa-arrow-down"></i><i>{{overview_platform_day_dict.pv.1}}</i></div>
+                      <div class="pull-right"><span style="margin-right: 10px">同比</span><i class="fa fa-arrow-up"></i><i>{{overview_platform_day_dict.pv.2}}</i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                  <div class="mini-widget">
+                    <div class="mini-widget-heading clearfix">
+                      <div class="text-center">人均播放次数</div>
+                    </div>
+                    <div class="mini-widget-body clearfix">
+                      <div class="pull-left">
+                        <i style="background:url({% static 'images/imgList.png)' %} no-repeat -60px 0; width: 60px;height:60px;display: inline-block"></i>
+                      </div>
+                      <div class="pull-right number">{{overview_platform_day_dict.vv_perperson.0}}</div>
+                    </div>
+                    <div class="mini-widget-footer clearfix">
+                      <div class="pull-left"><span style="margin-right: 10px">环比</span><i class="fa fa-arrow-down"></i><i>{{overview_platform_day_dict.vv_perperson.1}}%</i></div>
+                      <div class="pull-right"><span style="margin-right: 10px">同比</span><i class="fa fa-arrow-up"></i><i>{{overview_platform_day_dict.vv_perperson.2}}%</i></div>
+                    </div>
+                    <!--                 <div class="mini-widget-footer center-align-text">
+                                      <span>Better than last week</span>
+                                    </div> -->
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                  <div class="mini-widget">
+                    <div class="mini-widget-heading clearfix">
+                      <div class="text-center">人均播放时长</div>
+                    </div>
+                    <div class="mini-widget-body clearfix">
+                      <div class="pull-left">
+                        <i style="background:url({% static 'images/imgList.png)' %}no-repeat -60px 0; width: 60px;height:60px;display: inline-block"></i>
+                      </div>
+                      <div class="pull-right number">{{overview_platform_day_dict.duration_perperson.0}}</div>
+                    </div>
+                    <div class="mini-widget-footer clearfix">
+                      <div class="pull-left"><span style="margin-right: 10px">环比</span><i class="fa fa-arrow-down"></i><i>{{overview_platform_day_dict.duration_perperson.1}}</i></div>
+                      <div class="pull-right"><span style="margin-right: 10px">同比</span><i class="fa fa-arrow-up"></i><i>{{overview_platform_day_dict.duration_perperson.2}}</i></div>
+                    </div>
+                    <!--                 <div class="mini-widget-footer center-align-text">
+                                      <span>Better than last week</span>
+                                    </div> -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          <!-- Row starts -->
+
+          <!-- Row ends -->
+
+          <!-- Row Start -->
+          <div class="widget">
+            <div class="wedger-header-blue">
+              <div style="font-size: 24px;font-weight: bold;color:#fff;">
+                平台趋势
+              </div>
+            </div>
+            <div class="widget-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="widget">
+                    <div class="widget-header">
+                      <div class="title">
+                        月VV-UV趋势
+                    <span class="mini-title">
+                      Right now
+                    </span>
+                      </div>
+                    </div>
+                    <div class="widget-body">
+                      <div id="uv_left" style="position: relative;height: 300px;"></div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="widget">
+                    <div class="widget-header">
+                      <div class="title">
+                        日VV-UV趋势
+                    <span class="mini-title">
+                      Right now
+                    </span>
+                      </div>
+                    </div>
+                    <div class="widget-body">
+                      <div id="uv_right" style="height: 300px"></div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Row Start -->
+          <div class="widget">
+            <div class="wedger-header-blue">
+              <div style="font-size: 24px;font-weight: bold;color:#fff;">
+                平台趋势分析
+              </div>
+            </div>
+            <div class="widget-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="widget">
+                    <div class="widget-header">
+                      <div class="title">
+                        分端VV趋势
+                    <span class="mini-title">
+                      Right now
+                    </span>
+                      </div>
+                    </div>
+                    <div class="widget-body">
+                      <div id="trend_left" style="height: 300px"></div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="widget">
+                    <div class="widget-header">
+                      <div class="title">
+                        分端UV趋势
+                    <span class="mini-title">
+                      Right now
+                    </span>
+                      </div>
+                    </div>
+                    <div class="widget-body">
+                      <div id="trend_right" style="height: 300px"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="widget">
+                    <div class="widget-header">
+                      <div class="title">
+                        分频道VV趋势
+                    <span class="mini-title">
+                      Right now
+                    </span>
+                      </div>
+                    </div>
+                    <div class="widget-body">
+                      <div id="channel_left" style="height: 300px"></div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="widget">
+                    <div class="widget-header">
+                      <div class="title">
+                        分频道UV趋势
+                    <span class="mini-title">
+                      Right now
+                    </span>
+                      </div>
+                    </div>
+                    <div class="widget-body">
+                      <div id="channel_right" style="height: 300px"></div>
+                    </div>
+                  </div>
+
+                </div>
+              <!-- Row End -->
+              <br/>
+              <!-- Row Start -->
+
+            </div>
+
+              <div class="row">
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="widget">
+                                  <div class="widget-header">
+                                    <div class="title">
+                                      DAU、UV占比
+                                  <span class="mini-title">
+                                    Right now
+                                  </span>
+                                    </div>
+                                  </div>
+                                  <div class="widget-body">
+                                    <div id="display_left" style="height: 600px"></div>
+                                  </div>
+                                </div>
+
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="widget">
+                                  <div class="widget-header">
+                                    <div class="title">
+                                      上周重点节目(VV、UV、VV/UV)
+                                  <span class="mini-title">
+                                    Right now
+                                  </span>
+                                    </div>
+                                  </div>
+                                  <div class="widget-body">
+                                    <div id="display_right" style="height: 600px"></div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+              <!-- Row End -->
+              <br/>
+          </div>
+
+
+
+        </div>
+        <!-- Dashboard Wrapper End -->
+
+        <footer>
+          <div style="text-align:center"><p>© MGTV hf ltt</p></div>
+        </footer>
+
+      </div>
+    </div>
+    <!-- Main Container end -->
+
+    <script src="{% static 'blue-moon/js/jquery.js' %}"></script>
+    <script src="{% static 'blue-moon/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'blue-moon/js/jquery.scrollUp.js' %}"></script>
+    
+    <!-- jQuery UI JS -->
+    <script src="{% static 'blue-moon/js/jquery-ui-v1.10.3.js' %}"></script>
+
+    <!-- Just Gage -->
+    <script src="{% static 'blue-moon/js/justgage/raphael.2.1.0.min.js' %}"></script>
+
+    <!-- Flot Charts -->
+    <script src="{% static 'blue-moon/js/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'blue-moon/js/flot/jquery.flot.orderBar.min.js' %}"></script>
+    <script src="{% static 'blue-moon/js/flot/jquery.flot.stack.min.js' %}"></script>
+    <script src="{% static 'blue-moon/js/flot/jquery.flot.pie.min.js' %}"></script>
+    <script src="{% static 'blue-moon/js/flot/jquery.flot.tooltip.min.js' %}"></script>
+    <script src="{% static 'blue-moon/js/flot/jquery.flot.resize.min.js' %}"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'blue-moon/js/menu.js' %}"></script>
+    <script src="{% static 'blue-moon/js/custom-index2.js' %}"></script>
+    <script src="{% static 'blue-moon/js/echarts.min.js' %}"></script>
+
+    <script type="text/javascript">
+
+      function firstMap(){
+
+        var myChart = echarts.init(document.getElementById('header_one'));
+        option = {
+
+          series : [
+            {
+              name: '速度',
+              type: 'gauge',
+              z: 3,
+              min: 0,
+              max: 100,
+              splitNumber: 5,
+              radius: '100%',
+              axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                  width: 3
+                }
+              },
+              axisTick: {            // 坐标轴小标记
+                length: 5,        // 属性length控制线长
+                lineStyle: {       // 属性lineStyle控制线条样式
+                  color: 'auto'
+                }
+              },
+              splitLine: {           // 分隔线
+                length: 10,         // 属性length控制线长
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                  color: 'auto'
+                }
+              },
+              title : {
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                  fontWeight: 'bolder',
+                  fontSize: 10,
+                  fontStyle: 'italic'
+                }
+              },
+              detail : {
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                  fontWeight: '10'
+                }
+              },
+              data:{value: 40, name: 'KPI达标率'}
+            }
+          ]
+        };
+
+        setInterval(function (){
+          option.series[0].data.value = (Math.random()*100).toFixed(2) - 0;
+          myChart.setOption(option,true);
+        }.call(this),2000);
+        window.onresize = myChart.resize;
+      }
+      firstMap();
+
+      function uv_left(){
+        var vv_month_date = {{ vv_month_date|safe }};
+        var vv_month_lastyear = {{ vv_month_lastyear|safe }};
+        var vv_month_thisyear = {{ vv_month_thisyear|safe }};
+        var myChart = echarts.init(document.getElementById('uv_left'));
+		myChart.showLoading();
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['2016','2017']
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                }
+            ],
+            yAxis: {},
+            series: [{
+                name: '2016',
+                type: 'bar',
+                data: vv_month_lastyear,
+                markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+                },
+                },
+                {
+                name: '2017',
+                type: 'bar',
+                data: vv_month_thisyear,
+                markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+                },
+                }
+                ]
+        };
+		myChart.hideLoading();
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.onresize = myChart.resize;
+      }
+      uv_left();
+
+      function uv_right(){
+        var vv_day_date = {{ vv_day_date|safe }};
+        var vv_day_data = {{ vv_day_data|safe }};
+        var uv_day_data = {{ uv_day_data|safe }};
+        var vv_day_perperson = {{ vv_day_perperson|safe }};
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('uv_right'));
+		myChart.showLoading();
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {},
+            legend: {
+                data:[{name:'vv',icon:'circle',textStyle:{color:'red'}},{name:'uv',icon:'circle',textStyle:{color:'blue'}}]
+            },
+            xAxis: {
+                data: vv_day_date
+            },
+            yAxis: {},
+            series: [{
+                name: 'vv',
+                type: 'line',
+                data: vv_day_data,
+                markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            },
+
+            {
+                name: 'uv',
+                type: 'line',
+                data: uv_day_data,
+                markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                },
+            }]
+        };
+		myChart.hideLoading();
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.onresize = myChart.resize;
+      }
+      uv_right();
+
+      function trend_left(){
+            var vv_day_date = {{ vv_day_date|safe }};
+            var vv_terminal_day_dict = {{ vv_terminal_day_dict|safe }};
+            var terminal = new Array();
+            for (i in vv_terminal_day_dict){
+                terminal.push(i);
+            }
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('trend_left'));
+            myChart.showLoading();
+            // 指定图表的配置项和数据
+            option = {
+                title: {
+                    text: ''
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:terminal
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : vv_day_date
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'phonem',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_terminal_day_dict.phonem
+                    },
+                    {
+                        name:'iphone',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_terminal_day_dict.iphone
+                    },
+                    {
+                        name:'pcweb',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_terminal_day_dict.pcweb
+                    },
+                    {
+                        name:'android',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_terminal_day_dict.android
+                    },
+                    {
+                        name:'ott',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_terminal_day_dict.ott
+                    }
+                ]
+            };
+            myChart.hideLoading();
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        window.onresize = myChart.resize;
+      }
+      trend_left();
+
+      function trend_right(){
+            var vv_day_date = {{ vv_day_date|safe }};
+            var uv_terminal_day_dict = {{ uv_terminal_day_dict|safe }};
+            var terminal = new Array();
+            for (i in uv_terminal_day_dict){
+                terminal.push(i);
+            }
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('trend_right'));
+            myChart.showLoading();
+            // 指定图表的配置项和数据
+            option = {
+                title: {
+                    text: ''
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:terminal
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : vv_day_date
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'phonem',
+                        type:'line',
+                        data:uv_terminal_day_dict.phonem
+                    },
+                    {
+                        name:'iphone',
+                        type:'line',
+                        data:uv_terminal_day_dict.iphone
+                    },
+                    {
+                        name:'pcweb',
+                        type:'line',
+                        data:uv_terminal_day_dict.pcweb
+                    },
+                    {
+                        name:'android',
+                        type:'line',
+                        data:uv_terminal_day_dict.android
+                    },
+                    {
+                        name:'ott',
+                        type:'line',
+                        data:uv_terminal_day_dict.ott
+                    }
+                ]
+            };
+            myChart.hideLoading();
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        window.onresize = myChart.resize;
+      }
+      trend_right();
+
+      function channel_left(){
+            var vv_day_date = {{ vv_day_date|safe }};
+            var vv_channel_day_dict = {{ vv_channel_day_dict|safe }};
+            var channel = new Array();
+            for (i in vv_channel_day_dict){
+                channel.push(i);
+            }
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('channel_left'));
+            myChart.showLoading();
+            // 指定图表的配置项和数据
+            option = {
+                title: {
+                    text: ''
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['综艺','电视剧','电影','动漫']
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : vv_day_date
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'电影',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.movie
+                    },
+                    {
+                        name:'综艺',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.show
+                    },
+                    {
+                        name:'电视剧',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.tv
+                    },
+                    {
+                        name:'动漫',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.cartoon
+                    }
+                ]
+            };
+            myChart.hideLoading();
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+      }
+      channel_left();
+
+      function channel_right(){
+          var vv_day_date = {{ vv_day_date|safe }};
+          var uv_channel_day_dict = {{ uv_channel_day_dict|safe }};
+          var channel = new Array();
+          for (i in uv_channel_day_dict){
+              channel.push(i);
+          }
+          // 基于准备好的dom，初始化echarts实例
+          var myChart = echarts.init(document.getElementById('channel_right'));
+          myChart.showLoading();
+          // 指定图表的配置项和数据
+          option = {
+              title: {
+                  text: ''
+              },
+              tooltip : {
+                  trigger: 'axis'
+              },
+              legend: {
+                  data:['综艺','电视剧','电影','动漫']
+              },
+              toolbox: {
+                  feature: {
+                      saveAsImage: {}
+                  }
+              },
+              grid: {
+                  left: '3%',
+                  right: '4%',
+                  bottom: '3%',
+                  containLabel: true
+              },
+              xAxis : [
+                  {
+                      type : 'category',
+                      boundaryGap : false,
+                      data : vv_day_date
+                  }
+              ],
+              yAxis : [
+                  {
+                      type : 'value'
+                  }
+              ],
+              series : [
+                  {
+                      name:'电影',
+                      type:'line',
+                      data:uv_channel_day_dict.movie
+                  },
+                  {
+                      name:'综艺',
+                      type:'line',
+                      data:uv_channel_day_dict.show
+                  },
+                  {
+                      name:'电视剧',
+                      type:'line',
+                      data:uv_channel_day_dict.tv
+                  },
+                  {
+                      name:'动漫',
+                      type:'line',
+                      data:uv_channel_day_dict.cartoon
+                  }
+              ]
+          };
+          myChart.hideLoading();
+          // 使用刚指定的配置项和数据显示图表。
+          myChart.setOption(option);
+      }
+      channel_right();
+
+      function display_left(){
+          var vv_day_date = {{ vv_day_date|safe }};
+          var dau_day_data = {{ dau_day_data|safe }};
+          var uv_ration_day_data = {{ uv_ration_day_data|safe }};
+
+          // 基于准备好的dom，初始化echarts实例
+          var myChart = echarts.init(document.getElementById('display_left'));
+          myChart.showLoading();
+          // 指定图表的配置项和数据
+          option = {
+                    tooltip: {
+                      trigger: 'axis'
+                    },
+                    legend: {
+                      data:['DAU', 'UV占比']
+                    },
+                    toolbox: {
+                      show: true,
+                      feature: {
+                        dataView: {readOnly: false},
+                        restore: {},
+                        saveAsImage: {}
+                      }
+                    },
+                    dataZoom: {
+                      show: false,
+                      start: 0,
+                      end: 100
+                    },
+                    xAxis: [
+                      {
+                        type: 'category',
+                        boundaryGap: true,
+                        data:vv_day_date
+                      },
+                    ],
+                    yAxis: [
+                      {
+                        type: 'value',
+                        scale: true,
+                        name: 'DAU',
+                        max: 4000,
+                        min: 0,
+                        boundaryGap: [0.2, 0.2]
+                      },
+                      {
+                        type: 'value',
+                        scale: true,
+                        name: 'UV占比',
+                        max: 1,
+                        min: 0,
+                        boundaryGap: [0.2, 0.2]
+                      }
+                    ],
+                    series: [
+                      {
+                        name:'DAU',
+                        type:'bar',
+                        data:dau_day_data
+
+                      },
+                      {
+                        name:'UV占比',
+                        type:'line',
+                        yAxisIndex: 1,
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'top'
+                            }
+                        },
+                        data:uv_ration_day_data
+
+                      }
+                    ]
+                  };
+          myChart.hideLoading();
+          // 使用刚指定的配置项和数据显示图表。
+          myChart.setOption(option);
+          window.onresize = myChart.resize;
+      }
+      display_left();
+
+      function display_right(){
+        var myChart = echarts.init(document.getElementById('display_right'));
+        var data = [
+          [[28604,77,17096869,'Australia',1990],[31163,77.4,27662440,'Canada',1990],[1516,68,1154605773,'China',1990],[13670,74.7,10582082,'Cuba',1990],[28599,75,4986705,'Finland',1990],[29476,77.1,56943299,'France',1990],[31476,75.4,78958237,'Germany',1990],[28666,78.1,254830,'Iceland',1990],[1777,57.7,870601776,'India',1990],[29550,79.1,122249285,'Japan',1990],[2076,67.9,20194354,'North Korea',1990],[12087,72,42972254,'South Korea',1990],[24021,75.4,3397534,'New Zealand',1990],[43296,76.8,4240375,'Norway',1990],[10088,70.8,38195258,'Poland',1990],[19349,69.6,147568552,'Russia',1990],[10670,67.3,53994605,'Turkey',1990],[26424,75.7,57110117,'United Kingdom',1990],[37062,75.4,252847810,'United States',1990]],
+          [[44056,81.8,23968973,'Australia',2015],[43294,81.7,35939927,'Canada',2015],[13334,76.9,1376048943,'China',2015],[21291,78.5,11389562,'Cuba',2015],[38923,80.8,5503457,'Finland',2015],[37599,81.9,64395345,'France',2015],[44053,81.1,80688545,'Germany',2015],[42182,82.8,329425,'Iceland',2015],[5903,66.8,1311050527,'India',2015],[36162,83.5,126573481,'Japan',2015],[1390,71.4,25155317,'North Korea',2015],[34644,80.7,50293439,'South Korea',2015],[34186,80.6,4528526,'New Zealand',2015],[64304,81.6,5210967,'Norway',2015],[24787,77.3,38611794,'Poland',2015],[23038,73.13,143456918,'Russia',2015],[19360,76.5,78665830,'Turkey',2015],[38225,81.4,64715810,'United Kingdom',2015],[53354,79.1,321773631,'United States',2015]]
+        ];
+
+        option = {
+
+          title: {
+            text: '1990 与 2015 年各国家人均寿命与 GDP'
+          },
+          legend: {
+            right: 10,
+            data: ['1990', '2015']
+          },
+          xAxis: {
+            splitLine: {
+              lineStyle: {
+                type: 'dashed'
+              }
+            }
+          },
+          yAxis: {
+            splitLine: {
+              lineStyle: {
+                type: 'dashed'
+              }
+            },
+            scale: true
+          },
+          series: [{
+            name: '1990',
+            data: data[0],
+            type: 'scatter',
+            symbolSize: function (data) {
+              return Math.sqrt(data[2]) / 5e2;
+            },
+            label: {
+              emphasis: {
+                show: true,
+                formatter: function (param) {
+                  return param.data[3];
+                },
+                position: 'top'
+              }
+            },
+            itemStyle: {
+              normal: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(120, 36, 50, 0.5)',
+                shadowOffsetY: 5,
+                color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                  offset: 0,
+                  color: 'rgb(251, 118, 123)'
+                }, {
+                  offset: 1,
+                  color: 'rgb(204, 46, 72)'
+                }])
+              }
+            }
+          }, {
+            name: '2015',
+            data: data[1],
+            type: 'scatter',
+            symbolSize: function (data) {
+              return Math.sqrt(data[2]) / 5e2;
+            },
+            label: {
+              emphasis: {
+                show: true,
+                formatter: function (param) {
+                  return param.data[3];
+                },
+                position: 'top'
+              }
+            },
+            itemStyle: {
+              normal: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(25, 100, 150, 0.5)',
+                shadowOffsetY: 5,
+                color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                  offset: 0,
+                  color: 'rgb(129, 227, 238)'
+                }, {
+                  offset: 1,
+                  color: 'rgb(25, 183, 207)'
+                }])
+              }
+            }
+          }]
+        };
+
+        myChart.setOption(option);
+        window.onresize = myChart.resize;
+      }
+      display_right();
+
+      //ScrollUp
+      $(function () {
+        $.scrollUp({
+          scrollName: 'scrollUp', // Element ID
+          topDistance: '300', // Distance from top before showing element (px)
+          topSpeed: 300, // Speed back to top (ms)
+          animation: 'fade', // Fade, slide, none
+          animationInSpeed: 400, // Animation in speed (ms)
+          animationOutSpeed: 400, // Animation out speed (ms)
+          scrollText: 'Top', // Text for element
+          activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+      });
+
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="div" style="width: 300px;height: 300px;"></div>
+    <script src="js/echarts.min.js"></script>
+    <script type="text/javascript">
+        function firstMap(){
+        var myChart = echarts.init(document.getElementById('div'));
+        option = {
+            tooltip : {
+                formatter: "{a} <br/>{b} : {c}%"
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            series : [
+                {
+                    name:'业务指标',
+                    type:'gauge',
+                    detail : {formatter:'{value}%'},
+                    data:[{value: 50, name: '完成率'}]
+                }
+            ]
+        };
+
+
+        myChart.setOption(option);}
+        firstMap()
+
+    </script>
+</body>
+</html>

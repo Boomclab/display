@@ -1,0 +1,312 @@
+{% load  staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="{% static  'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/echarts.js' %}"></script>
+</head>
+<body>
+<p>测试一下看看</p>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;float:left"></div>
+	<div id="main2" style="width:600px;height:400px;float:left"></div>
+    <div id="main3" style="width:600px;height:400px;float:left;background:lightblue"></div>
+    <div id="main4" style="width:800px;height:400px;float:left;background:lightblue"></div>
+    <div id="main5" style="width:800px;height:400px;float:left;background:lightblue"></div>
+    <script type="text/javascript">
+        var vv_month_date = {{ vv_month_date|safe }};
+        var vv_month_lastyear = {{ vv_month_lastyear|safe }};
+        var vv_month_thisyear = {{ vv_month_thisyear|safe }};
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+		myChart.showLoading();
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['2016','2017']
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                }
+            ],
+            yAxis: {},
+            series: [{
+                name: '2016',
+                type: 'bar',
+                data: vv_month_lastyear,
+                },
+                {
+                name: '2017',
+                type: 'bar',
+                data: vv_month_thisyear,}
+                ]
+        };
+		myChart.hideLoading();
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    <script type="text/javascript">
+        var vv_day_date = {{ vv_day_date|safe }};
+        var vv_day_data = {{ vv_day_data|safe }};
+        var uv_day_data = {{ uv_day_data|safe }};
+        var vv_day_perperson = {{ vv_day_perperson|safe }};
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main2'));
+		myChart.showLoading();
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {},
+            legend: {
+                data:[{name:'vv',icon:'circle',textStyle:{color:'red'}},{name:'uv',icon:'circle',textStyle:{color:'blue'}}]
+            },
+            xAxis: {
+                data: vv_day_date
+            },
+            yAxis: {},
+            series: [{
+                name: 'vv',
+                type: 'line',
+                data: vv_day_data,
+                markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            },
+
+            {
+                name: 'uv',
+                type: 'line',
+                data: uv_day_data,
+                markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                },
+            }]
+        };
+		myChart.hideLoading();
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    <script type="text/javascript">
+            var vv_day_date = {{ vv_day_date|safe }};
+            var vv_day_perperson = {{ vv_day_perperson|safe }};
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main3'));
+            myChart.showLoading();
+            // 指定图表的配置项和数据
+            var option = {
+                tooltip: {},
+                legend: {
+                    data:[{name:'人均vv',icon:'circle',textStyle:{color:'red'}},{name:'uv',icon:'circle',textStyle:{color:'blue'}}]
+                },
+                xAxis: {
+                    data: vv_day_date
+                },
+                yAxis: {},
+                series: [{
+                    name: '人均vv',
+                    type: 'line',
+                    data: vv_day_perperson,
+                    markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                    },
+                    markLine : {
+                        data : [
+                            {type : 'average', name: '平均值'}
+                        ]
+                    }
+                },]
+            };
+            myChart.hideLoading();
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+    </script>
+    <script type="text/javascript">
+            var vv_day_date = {{ vv_day_date|safe }};
+            var vv_channel_day_dict = {{ vv_channel_day_dict|safe }};
+            var channel = new Array();
+            for (i in vv_channel_day_dict){
+                channel.push(i);
+            }
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main4'));
+            myChart.showLoading();
+            // 指定图表的配置项和数据
+            option = {
+                title: {
+                    text: ''
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:channel
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : vv_day_date
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'phonem',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.phonem
+                    },
+                    {
+                        name:'iphone',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.iphone
+                    },
+                    {
+                        name:'pcweb',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.pcweb
+                    },
+                    {
+                        name:'android',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.android
+                    },
+                    {
+                        name:'ott',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:vv_channel_day_dict.ott
+                    }
+                ]
+            };
+            myChart.hideLoading();
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+    </script>
+    <script type="text/javascript">
+            var vv_day_date = {{ vv_day_date|safe }};
+            var uv_channel_day_dict = {{ uv_channel_day_dict|safe }};
+            var channel = new Array();
+            for (i in vv_channel_day_dict){
+                channel.push(i);
+            }
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main5'));
+            myChart.showLoading();
+            // 指定图表的配置项和数据
+            option = {
+                title: {
+                    text: ''
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:channel
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : vv_day_date
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'phonem',
+                        type:'line',
+                        data:uv_channel_day_dict.phonem
+                    },
+                    {
+                        name:'iphone',
+                        type:'line',
+                        data:uv_channel_day_dict.iphone
+                    },
+                    {
+                        name:'pcweb',
+                        type:'line',
+                        data:uv_channel_day_dict.pcweb
+                    },
+                    {
+                        name:'android',
+                        type:'line',
+                        data:uv_channel_day_dict.android
+                    },
+                    {
+                        name:'ott',
+                        type:'line',
+                        data:uv_channel_day_dict.ott
+                    }
+                ]
+            };
+            myChart.hideLoading();
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+    </script>
+</body>
+</html>
